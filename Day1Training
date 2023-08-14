@@ -1,0 +1,257 @@
+
+############################Task  August 14 2023#################################
+
+###########################Sprinix TechnoLabs
+
+# System setup
+
+# basic software installation / update
+
+# trying to get familiar with ubuntu debian OS
+
+# Some commands learnt today 
+
+  - lshw hardware specification
+  - cat /etc/os-release
+  - 
+  
+#############################################################################
+
+############### Program 1 #############
+
+  pattern question
+ /* 
+  <!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+ 
+
+$n=7;
+
+for ($x = 1; $x <= $n; $x++) {  // rows
+   
+   for ($z = 1; $z <= $n-$x ; $z++) // spaces
+   {
+        echo"0"; // print 0 instead of space
+   }
+  for ($y = 1; $y <= ($x*2)-1 ; $y++) //columns
+  {
+  echo "*"; 
+  }
+
+  echo "<br>"; // change line after printing every row
+}
+?>  
+
+</body>
+</html>
+
+
+*/
+
+
+##########################################################################################
+
+############### Program 2 #############
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+ 
+ 
+$n=10;
+
+echo "Pyramid Pattern with $n . rows <br>";
+ echo "<br>";
+
+for ($x = 1; $x <= $n; $x++) {  // rows
+    echo" row $x. ";
+   for ($z = 1; $z <= $n-$x ; $z++) // spaces
+   {
+        echo"0 "; // print 0 instead of space
+   }
+  for ($y = 1; $y <= ($x*2)-1 ; $y++) //columns
+  {
+  echo "* "; 
+  }
+
+  echo "<br>"; // change line after printing every row
+}
+  
+ echo "<br>";
+    
+
+echo "Reverse Pyramid Pattern with $n. rows <br>";
+echo "<br>";
+       
+for ($i = $n; $i >= 1; $i--) {  // rows
+        $row=$n-$i+1;
+        echo" row $row.  ";
+   for ($k = 1; $k <= $n-$i ; $k++) // spaces
+   {
+        echo"0 "; // print 0 instead of space
+   }
+  for ($j = 1; $j <= ($i*2)-1 ; $j++) //columns
+  {
+  echo "* "; 
+  }
+
+  echo "<br>" ; // change line after printing every row
+}
+
+?>  
+
+
+
+
+</body>
+</html>
+############################################################################################
+
+                                     Dynamic Patterns
+Pattern 3                     Pattern 4
+
+          *                   _ _ _ *
+        * *                   _ _ * *
+      * * *                   _ * * *
+    * * * *                   * * * *
+         
+         
+
+<?php
+
+
+$run=true;
+while($run)
+{
+    echo("Enter 1 for pyramid pattern\nEnter 2 to for right angle triangle\nEnter 0 to exit to terminate ");
+      echo("\n");
+     $a = readline();
+     if($a==0)
+     {
+         $run=false;
+         continue;
+         echo "bye";
+     }
+switch($a)
+{
+   
+    
+    case 2:
+         $x= readline("Enter size of right angle triange pattern \n");
+        for($i= 1; $i<= $x; $i++)
+        {
+            for($k=1;$k<=$x-$i;$k++)
+            {
+                echo " ";
+            }
+            
+              for($j=1; $j<=$i;$j++)
+              {
+                     echo"*"   ;              
+              }
+          echo"\r\n";
+        }
+        break;
+    
+    
+    case 1:
+         $x= readline("Enter size of pyramid \n");
+        for($i=1; $i<=$x;$i++)
+        {
+            for($k=1;$k<=$x-$i;$k++)
+            {
+                echo " ";
+            }
+            
+              for($j=1; $j<=$i;$j++)
+              {
+                     echo"* "   ;              
+              }
+          echo"\r\n";
+        }
+        break;
+        
+    default :
+        echo "wrong choice";
+}
+     echo"try again with some other value \n ";
+
+}
+
+############################################################################################
+     
+    pyramid Using 2 loop only pattern
+<php
+   
+   $n=5;
+
+for ($x = 1; $x <= $n; $x++) {  // rows
+   
+   for ($z = 1; $z <= $n+$x-1; $z++) // spaces
+   {    
+       if($z<=$n-$x)
+       
+        echo"0"; // print 0 instead of space
+        else {
+            echo "*";
+        }
+   }
+  
+
+  echo "\n"; // change line after printing every row
+}
+?>      
+#####################################################################################
+
+    Reverse Pyramid Using 2 loop only pattern
+<?php
+
+ 
+
+$n=5;
+
+for ($x = $n; $x >= 1; $x--) {  // rows
+   
+   for ($z = 1; $z <= $n+$x-1; $z++) // spaces
+   {    
+       if($z<=$n-$x)
+       
+        echo"0"; // print 0 instead of space
+        else {
+            echo "*";
+        }
+   }
+  
+
+  echo "\n"; // change line after printing every row
+}
+?>  
+
+
+
+
+########################################################
+
+
+
+
+
+
+
+
+
+         
+         
+         
+         
+
+
+

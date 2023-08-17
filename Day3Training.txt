@@ -1,0 +1,413 @@
+##################################    Day3 Training Php #################################
+
+
+# Array Merge with OOPs concept 
+
+# classes, objects , passing objects as parameter
+
+<?php
+/******************************************************************************
+
+n=  1,2,3,4,5,6,7,8
+
+n2= 4,5,6,8,9,
+
+n3= 1,4,2,5,3,6,4,8,5,9,6,7,8
+
+*******************************************************************************/
+
+
+class Merge 
+{
+   var $arr=[];
+
+
+function InputName($s)
+{     
+   echo"\n";
+   
+   
+  for($i=0;$i<$s;$i++)
+   {
+     
+       $this->arr[$i]=readline();
+       echo"\n";
+       
+  }
+   
+    
+}
+    
+    
+    function PrintName($s)
+{      
+    echo"\n";
+   
+    for($i=0;$i<$s;$i++)
+  {
+       
+       echo($this->arr[$i]);
+       echo(",");
+       
+  }
+    
+}
+    
+    function MergArray(Merge $a,Merge $b)
+      {
+          echo"\n";
+          $s1=count($a->arr);
+          $s2=count($b->arr);
+          
+          echo("$s1, $s2");
+           echo"\n";
+          $ts=$s1+$s2;
+          $k=0;
+          $l=0;
+          $i=0;
+          while($i<$ts)
+          {  
+              echo("$i ");
+              if($k<$s1)
+              {
+                  $this->arr[$i++]= $a->arr[$k++];
+                
+              }
+              if($l<$s2)
+                {
+                  $this->arr[$i++]=$b->arr[$l++];
+                }
+                
+              }
+              return $ts;
+          }
+          
+          
+      }
+
+    $obj1 = new Merge;
+    $obj2 = new Merge;
+    $obj3 = new Merge;
+    echo("enter size of array1\n");
+     $size =readline();
+    
+     
+     $obj1->InputName($size);
+    echo("enter size of array2\n");
+     $size1 =readline();
+     
+     
+     $obj2->InputName($size1);
+   
+     $obj1->PrintName($size);
+     
+     $obj2->PrintName($size1);
+     
+     $s3= $obj3->MergArray($obj1,$obj2);
+     
+     $obj3->PrintName($s3);
+     
+     
+##################################################################################################
+
+
+check How many same elements are their in three different array
+
+
+<?php
+/******************************************************************************
+
+
+
+*******************************************************************************/
+
+
+class SameEle
+{
+   var $arr=[];
+
+
+function InputName($s)
+{     
+   echo"\n";
+   
+   
+  for($i=0;$i<$s;$i++)
+   {
+     
+       $this->arr[$i]=readline();
+       echo"\n";
+       
+  }
+   
+    
+}
+    
+    
+    function PrintName($s)
+ {      
+    echo"\n";
+   
+    for($i=0;$i<$s;$i++)
+  {
+       
+       echo($this->arr[$i]);
+       echo(",");
+       
+  }
+    
+ }
+    
+          
+          
+         function checkSameEle(SameEle $b, SameEle $c)
+          {
+              echo"\nSame elements in all 3 array are\n";
+              
+              for($i=0;$i<count($this->arr);$i++)
+              {
+               if (in_array($this->arr[$i], $b->arr) and in_array($this->arr[$i], $c->arr))  
+               echo($this->arr[$i].",");
+              }
+              
+          }
+          
+          
+}
+
+    $obj1 = new SameEle;
+    $obj2 = new SameEle;
+    $obj3 = new SameEle;
+    echo("enter size of array1\n");
+     $size1 =readline();
+    
+     
+     $obj1->InputName($size1);
+    echo("enter size of array2\n");
+     $size2 =readline();
+     
+     $obj2->InputName($size2);
+     
+       echo("enter size of array3\n");
+     $size3 =readline();
+     
+     $obj3->InputName($size3);
+   
+     $obj1->PrintName($size1);
+     
+     $obj2->PrintName($size2);
+     
+     $obj3->PrintName($size3);
+     
+     $obj1->checkSameEle( $obj2 ,$obj3);
+     
+
+##################################################################################################
+
+
+<?php
+/******************************************************************************
+
+n=  1,2,3,4,5,6,7,8
+
+*******************************************************************************/
+
+
+class TicTacToe
+{
+   
+
+static $arr= array (
+  
+  array(1,2,3),
+  array(4,5,6),
+  array(7,8,9),
+  
+  
+  
+);
+
+ static function PrintGame()
+{ echo"\n";
+    
+    for($i=0;$i<3;$i++)
+    {
+        for($j=0;$j<3;$j++)
+        {
+            echo(TicTacToe::$arr[$i][$j]."|");
+        }
+        echo("\n");
+    }  
+    if(TicTacToe::$arr[0][0]==TicTacToe::$arr[0][1]&&TicTacToe::$arr[0][0]==TicTacToe::$arr[0][2])
+    {
+        echo"you win";
+        exit();
+    }
+        if(TicTacToe::$arr[0][0]==TicTacToe::$arr[1][0]&&TicTacToe::$arr[0][0]==TicTacToe::$arr[2][0])
+    {
+       echo"you win";
+        exit();
+    }
+        if(TicTacToe::$arr[1][0]==TicTacToe::$arr[1][1]&&TicTacToe::$arr[1][0]==TicTacToe::$arr[1][2])
+    {
+      echo"you win";
+        exit();
+    }
+        if(TicTacToe::$arr[0][1]==TicTacToe::$arr[1][1]&&TicTacToe::$arr[0][1]==TicTacToe::$arr[2][1])
+    {
+      echo"you win";
+        exit();
+    }
+        if(TicTacToe::$arr[0][2]==TicTacToe::$arr[1][2]&&TicTacToe::$arr[0][2]==TicTacToe::$arr[2][2])
+    {
+       echo"you win";
+        exit();
+    }
+        if(TicTacToe::$arr[2][0]==TicTacToe::$arr[2][1]&&TicTacToe::$arr[2][0]==TicTacToe::$arr[2][2])
+    {
+          echo"you win";
+        exit();
+    }
+     if(TicTacToe::$arr[0][0]==TicTacToe::$arr[0][1]&&TicTacToe::$arr[0][0]==TicTacToe::$arr[0][2])
+     {echo"you win";
+        exit();
+    }
+        if(TicTacToe::$arr[0][0]==TicTacToe::$arr[1][1]&&TicTacToe::$arr[0][0]==TicTacToe::$arr[2][2])
+    {
+       echo"you win";
+        exit();
+    }
+        if(TicTacToe::$arr[0][2]==TicTacToe::$arr[1][1]&&TicTacToe::$arr[0][2]==TicTacToe::$arr[2][0])
+    {
+       echo"you win";
+        exit();
+    }
+    
+}
+    static function StartGame()
+    {
+        echo("####################### Welcome to TicTacToe Game##############################\n");
+        $chance=0;
+        $pname='x';
+        echo"$pname. Its Your chance first!";
+        $pos=readline();
+        
+        while(true)
+        {
+            switch($pos)
+            {
+                case 1:
+                    if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                  TicTacToe:: $arr[0][0]=$pname;
+                  TicTacToe::  PrintGame();
+                    $chance++;
+                    break;
+                case 2:
+                    if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                   TicTacToe:: $arr[0][1]=$pname;
+                   TicTacToe:: PrintGame();
+                      $chance++;
+                    break;
+                    
+                case 3:
+                       if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                   TicTacToe:: $arr[0][2]=$pname;
+                    TicTacToe::PrintGame();
+                      $chance++;
+                    break;
+                case 4:
+                        if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                   TicTacToe:: $arr[1][0]=$pname;
+                   TicTacToe:: PrintGame();
+                      $chance++;
+                    break;
+                case 5:
+                        if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                  TicTacToe::  $arr[1][1]=$pname;
+                    TicTacToe::PrintGame();
+                      $chance++;
+                    break;
+                case 6:
+                      if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                   TicTacToe:: $arr[1][2]=$pname;
+                    TicTacToe::PrintGame();
+                      $chance++;
+                    break;
+                case 7:
+                     if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                  TicTacToe::  $arr[2][0]=$pname;
+                   TicTacToe:: PrintGame();
+                      $chance++;
+                    break;
+                case 8:
+                      if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                   TicTacToe:: $arr[2][1]=$pname;
+                   TicTacToe:: PrintGame();
+                      $chance++;
+                    break;
+                case 9:
+                   if($chance%2==0)
+                    $pname='X';
+                    else {
+                        $pname='O';
+                    }
+                   TicTacToe::$arr[2][2]=$pname;
+                    TicTacToe::PrintGame();
+                     $chance++;
+                    break;
+                    
+                    
+                default: 
+                    echo"Wrong Choice";
+               
+            }
+             $pos=readline("Next chance \n");
+        }
+        
+    }
+        
+    
+}
+          TicTacToe::PrintGame();
+          TicTacToe::StartGame();
+
+
+##################################################################################################
+
+
+
+
+
+     

@@ -1,0 +1,171 @@
+################################       Day4Training  ##############################
+
+
+###########   Reverse Array by not using inverted Loop  ####################### 
+
+
+
+
+$arr =  array(1, 2, 4, 5 ,7,8);
+
+$n=count($arr);
+// reverse array without using reverse loop , same array
+
+
+
+
+for($i=0; $i<count($arr);$i++)
+{
+    
+  echo$arr[$i].",";
+}
+
+echo"\n\n";
+
+
+
+
+// for($i=0; $i<$n/2;$i++)
+// {
+    
+    
+//         $t= $arr[$i];
+//         $arr[$i]= $arr[($n-1)-$i];
+//         $arr[($n-1)-$i]= $t;
+      
+    
+// }
+
+###########   Array replace adjacent elements   ####################### 
+
+// for($i=0; $i<count($arr);$i++)
+// {
+    
+//     if($i%2==0 and ($i+1) != count($arr))
+//     {
+//         $t= $arr[$i];
+//         $arr[$i]= $arr[$i+1];
+//         $arr[$i+1]= $t;
+//         $i++;
+//     }
+// }
+
+
+
+
+
+for($i=0; $i<count($arr);$i++)
+{
+    
+  echo$arr[$i].",";
+}
+
+
+
+
+###############################################################
+
+
+<?php
+/******************************************************************************
+ 
+###################3 Associative array ############################
+
+*******************************************************************************/
+
+$Detail = array(
+    
+    "name" => "Ayush",
+    "age" => 23,
+    "email" => "ayush.vanvary@gmail.com",
+    "hobbies" => array("reading", "music", "sports")
+);
+    
+  
+//Loop through using for each 
+
+
+foreach ($Detail as list( "name" => $n , "age" => $n1, "email" => $n2, "hobbies" => $n3)){
+    
+    echo $n." ".$n1." ".$n2." ".$n3;
+}
+
+/*
+
+//Loop through using while 
+
+$keys = array_keys($Detail);
+$value = array_values($Detail);
+
+$i=0;
+while($i < count($Detail))
+{
+    echo( $keys[$i]. ":". $value[$i]."\n");
+    $i++;
+}
+
+
+
+
+
+//traversing associative array   using for loop
+
+
+
+
+$keys= array_keys($Detail);
+ 
+
+
+//       Handling Mixed Associative Array 
+
+
+for ($i = 0; $i < count($keys); $i++) 
+{
+    
+    $key = $keys[$i];
+  
+  if(is_array($Detail[$key])==1)
+    {
+      print_r($key." ");
+      print_r($Detail[$keys[3]]);
+     
+      continue;
+    }
+    $value = $Detail[$key];
+    
+    
+  echo"$key : $value \n";
+}
+
+
+
+
+
+
+################## Multidimensional associative Array ##################################
+
+
+//print_r(array_keys($Detail));
+
+
+// unset  field in associative array 
+unset($Detail['hobbies']);
+
+print_r($Detail);
+
+
+
+// unset subfield in mixed Multidimensional associative array
+unset($Detail['hobbies'][1]);
+
+print_r($Detail);
+
+*/
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+
+##########################Php pattern############################
+$n=5;
+
+$k=1;
+for($i=1; $i<=$n; $i++)
+{
+    $p=$k;
+    for($j=1;$j<=$i;$j++)
+    {
+        echo"$p ";
+        $p=$p-($n-$i+$j); // for print columns by subtrating in decereasing order
+    }
+    echo"\n";
+    $k= $k +1 +($n-$i);  // previous value of k +1 (n-i)
+}
+
+###############################################################################
+
+
+  $n=9;
+   $count=0;
+    echo"\n";
+  for($i =1;$i<=$n;$i++)
+  {
+    if(($i<=3 or $i>=$n-2) and ($i!=1 and $i!=$n)){
+        echo"*";}
+        else {
+            echo" ";
+        }
+   }
+   echo"\n";
+   for($j=1;$j<=5;$j++)
+   {
+       for($k=1;$k<=$n;$k++)
+       
+       {
+           if($j==1 and $k==5)
+           {echo"*";
+           continue;
+           }
+           if($j==$k|| ($n-$j)+1==$k)
+           echo"*";
+           else
+         echo" ";
+       }
+       echo"\n";https://www.onlinegdb.com/#tab-stdin
+       
+   }
+  
+  
+
+##############################################################################################
+
+
+
+abstract class Abstraction
+{
+    
+    abstract function getname():string;
+    public function printHello()
+    {
+        $t=$this->getname();
+        echo ($t);
+    }
+  
+    
+}
+
+class Child extends Abstraction
+{
+    function getname(): string
+{
+   return "Child Class";
+}
+}
+
+$child_ob = new Child;
+$child_ob->printHello();
+
+#####################################################################################
+
+
+Interface basics.................
+
+interface Animal {
+  public function makeSound();  // abstract method or interface
+}
+
+// Class definitions
+class Cat implements Animal {
+  public function makeSound() {
+    echo " Meow \n";
+  }
+}
+
+class Dog implements Animal {
+  public function makeSound() {
+    echo " Bark \n";
+  }
+}
+
+class Mouse implements Animal {
+  public function makeSound() {
+    echo " Squeak ";
+  }
+}
+
+// Create a list of animals
+$cat = new Cat();
+$dog = new Dog();
+$mouse = new Mouse();
+$animals = array($cat, $dog, $mouse);
+echo(gettype($animals));
+
+// Tell the animals to make a sound
+foreach($animals as $animal) {
+  $animal->makeSound();
+}
+
+
+######################################################################################################
+
+
+
+
+
+
